@@ -105,7 +105,7 @@ func UnTarinate(extractPath, sourcefile string) error {
 	}
 
 	tarBallReader := tar.NewReader(fileReader)
-
+	extractPath = filepath.FromSlash(extractPath)
 	for {
 		header, err := tarBallReader.Next()
 		if err != nil {
